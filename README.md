@@ -12,9 +12,19 @@ I am testing the Valentine's card (also in my repos), and as I did the work, I d
 * When the counter is set to 255,
 * I can't tell the order of events when the blasted ATmega328p overflow and counter compare interrupts take place.
 
+Setup: Two microcontrollers, and Arduino and a bare ATmega328p, connected together by various wires as described.
+
 The Arduino has its builtin FTDI serial chip for programming. Including a bootloader.
 
-The ATmega328p has its builtin 8 MHz clock, and is programmed using a USBASP device.
+The ATmega328p has its builtin 8 MHz clock, and is programmed using a USBASP device. I am connecting a USB hub and programming them using two separate instances of the Arduino IDE, each with different setup under "Tools". The ATmega328p is:
+* Board: ATmega328
+* Variant: 328P/328PA
+* Bootloader: None
+* BOD: Disabled
+* Clock: 8 MHz Internal
+* Compiler LTO: LTO Disabled
+* Port: /dev/ttyS4
+* Programmer: USBasp
 
 Fun!
 
